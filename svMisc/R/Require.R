@@ -2,19 +2,21 @@
 function(package, bundle = NULL, quietly = FALSE, warn.conflicts = TRUE,
     keep.source = getOption("keep.source.pkgs"), character.only = FALSE,
     version, save = TRUE, gui=getOption("guiRequire")) {
-    if (character.only == FALSE)
+	if (character.only == FALSE)
         packageName <- as.character(substitute(package))
     else
         packageName <- package
-    
-    if (packageName %in% installed.packages()[,"Package"] || packageName %in% .packages()) {
-        return(require(packageName, quietly, warn.conflicts, keep.source,
-            character.only = TRUE, version, save))
-    }    
+    # Check if the usual require() works
+    res <- require(packageName, quietly, warn.conflicts, keep.source,
+        character.only = TRUE, version, save)
+	if (res) return(res)    # If TRUE, everything is fine!
+    #if (packageName %in% installed.packages()[,"Package"] || packageName %in% .packages()) {
+    #    return(require(packageName, quietly, warn.conflicts, keep.source,
+    #        character.only = TRUE, version, save))
+    #}
     if (is.null(gui)) gui <- FALSE
     if (!gui || .Platform$OS.type != "windows") {
-        return(require(packageName, quietly, warn.conflicts, keep.source,
-            character.only=TRUE, version, save))
+        return(res) # We do nothing more
     }
     # Not needed any more with R 2.0.0 (use Depends: utils) require(utils) # for winDialog, file.choose, etc...
     libPaths <- .libPaths()
