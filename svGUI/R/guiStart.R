@@ -12,7 +12,7 @@ function(gui = "\"%SciViews_Home%/bin/RConsole.exe\" -connect") {
 	        stop("GUI communication feature does not seem to be installed. Run 'guiInstall()' first!")
 
 	    # Indicate that this is a SciViews program
-		options(SciViews.version = 0.7-0)
+		options(SciViews.version = 0.7-5)
 
 		# Indicate that the GUI supports also SciViews TclTk exchange protocol
 	    .Platform <- .Platform

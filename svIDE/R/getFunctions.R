@@ -8,7 +8,7 @@ function(pos) {
 		for (i in 1:l)
 			if (exists(lst[i], where = pos, mode = "function", inherits = FALSE))
 				isFun[i] <- TRUE
-		# Kepp only functions
+		# Keep only functions
 		lst <- lst[isFun]
 		return(lst)
 	}

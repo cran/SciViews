@@ -1,4 +1,4 @@
 Package: svMisc
 Title: SciViews GUI API - Miscellaneous functions
 Imports: utils, methods
-Description: Supporting functions for the GUI API (list items, load local packages, make syntax file, etc...)
+Description: Supporting functions for the GUI API (manage local variables, GUI to install packages, etc...)

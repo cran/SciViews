@@ -1,21 +1,17 @@
-importFrom(methods, getMethods, isGeneric)
-
 import(utils)
 
-export(Args,
-       assignTemp,
-       CallTip,
+importFrom(methods, getMethods, isGeneric)
+
+export(assignTemp,
        compareRVersion,
-       createSyntaxFile,
        existsTemp,
        findhtmlhelp,
        help.search.web,
        getEnvironment,
-       getFunctions,
-       getKeywords,
        getTemp,
-	   guiCmd,
-	   installLocalPackages,
+       guiCmd,
+       guiSource,
+       installLocalPackages,
        isSDI,
        isWin,
        listCustoms,

@@ -1,0 +1,14 @@
+import(utils, tcltk)
+
+importFrom(methods, getSlots)
+
+export(Args,
+       CallTip,
+       Complete,
+       createCallTipFile,
+       createSyntaxFile,
+       getFunctions,
+       getKeywords,
+       guiCallTip,
+       guiComplete,
+       guiDDEInstall)

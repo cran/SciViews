@@ -53,6 +53,6 @@ function(svlfile = "R.svl", pos = 2:length(search())) {
 		file = svlfile, append = TRUE)
 	
 	cat("[Keywords2]\n", file = svlfile, append = TRUE)
-	write.table(getKeywords(), file = svlfile, append = TRUE, quote = FALSE,
+	write.table(getKeywords(pos = pos), file = svlfile, append = TRUE, quote = FALSE,
 		row.names = FALSE, col.names = FALSE)
 }

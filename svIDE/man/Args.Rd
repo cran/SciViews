@@ -7,12 +7,15 @@
   \code{Args()} displays function arguments in a better way than \code{args()} does. It is primarily intended for code tips in GUIs.
 }
 \usage{
-Args(name)
-CallTip(code)
+Args(name, only.args = FALSE)
+CallTip(code, only.args = FALSE, location = FALSE)
 }
 \arguments{
   \item{name}{ A string with the name of a function }
   \item{code}{ A fraction of R code ending with the name of a function, eventually followed by '(' }
+  \item{only.args}{ Do we return only arguments of the function (\code{arg1, arg2 = TRUE, ...}),
+  or the full call, like (\code{myfun(arg1, arg2 = TRUE, ...)}). }
+  \item{location} { If \code{TRUE} then the location (in which package the function resides) is appended to the calltip between square brackets }
 }
 
 \value{
@@ -22,7 +25,7 @@ CallTip(code)
 \note{ \code{Args()} is supposed to display S3/S4 methods, and primitives
   adequately,... but this is not implemented yet in the current version! }
 
-\seealso{ \code{\link{findhtmlhelp}} }
+\seealso{ \code{\link{createCallTipFile}}, \code{\link{guiCallTip}} }
 \examples{
 	Args("ls")
 	CallTip("myvar <- lm(")

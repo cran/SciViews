@@ -20,7 +20,7 @@ findhtmlhelp(topic, package = .packages(), lib.loc = NULL, verbose = getOption("
 }
 \author{ Eric Lecoutre <lecoutre@stat.ucl.ac.be> }
 
-\seealso{ \code{\link{Args}} }
+\seealso{ \code{\link{listMethods}} }
 \examples{
 	findhtmlhelp("plot")
 	findhtmlhelp("ls")

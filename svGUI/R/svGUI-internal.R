@@ -1,6 +1,6 @@
 ".onLoad" <-
 function(lib, pkg) {
-	# Check R version that has to be >= 1.9.0
+	# Check R version that has to be >= 2.0.0
 	if (!(as.numeric(R.Version()$major) >= 2 || as.numeric(R.Version()$minor) >= 0))
 		stop("The svGUI library requires at least R 2.0.0!")
     # We rely on these libraries:

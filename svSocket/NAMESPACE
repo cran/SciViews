@@ -1,0 +1,11 @@
+importFrom(svMisc, assignTemp, existsTemp, getTemp, guiSource, rmTemp, TempEnv)
+
+import(tcltk)
+
+export(getSocketClients,
+       getSocketServerName,
+       getSocketServers,
+	   processSocket,
+	   sendSocket,
+	   startSocketServer,
+	   stopSocketServer)
