@@ -1,0 +1,5 @@
+Package: svDialogs
+Title: SciViews GUI API - Dialog boxes
+Depends: tcltk
+Imports: svMisc
+Description: Rapidly construct dialog boxes for your GUI, including an automatic function assistant

@@ -1,0 +1,31 @@
+importFrom(methods, getMethods, isGeneric)
+
+import(utils)
+
+export(Args,
+       assignTemp,
+       CallTip,
+       compareRVersion,
+       createSyntaxFile,
+       existsTemp,
+       findhtmlhelp,
+       help.search.web,
+       getEnvironment,
+       getFunctions,
+       getKeywords,
+       getTemp,
+	   guiCmd,
+	   installLocalPackages,
+       isSDI,
+       isWin,
+       listCustoms,
+       listMethods,
+       localPackages,
+       progress,
+       Require,
+       rmTemp,
+       tempdirWin,
+       TempEnv,
+       tempvar,
+       updateLocalPackages,
+       userdir)

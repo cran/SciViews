@@ -1,0 +1,5 @@
+Package: svViews
+Title: SciViews GUI API - Views and report features
+Depends: svMisc, R2HTML
+Imports: utils, lattice, MASS
+Description: Views are HTML presentations of the content of R objects, combining text, tables and graphs in the same document.
