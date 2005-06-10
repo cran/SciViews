@@ -1,6 +1,4 @@
-importFrom(svMisc, findhtmlhelp, Require)
-
-import(tcltk)
+import(tcltk, svMisc)
 
 export(display,
        guiDlg,
@@ -23,6 +21,10 @@ export(display,
        guiDlgSave,
        guiDlgText,
        guiDlgVarSel,
-       guiDlgView)
+       guiDlgView,
+       guiPane.tcltk,
+       guiPane.entry.tcltk,
+       guiPane.list.tcltk,
+	   guiSetStyle.tcltk)
 
 S3method(display, guiDlg)

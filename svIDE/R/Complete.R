@@ -5,7 +5,7 @@ function(code, givetype = FALSE, fieldsep = "|") {
     # This code gets the (partial) name of a variable at the end of a string
     getName <- function(code) {
         if (length(grep("[a-zA-Z0-9_\\.]$", code)) == 0) return("")
-        pos <- regexpr("[a-zA-Z0-9_\\.]+$", code)
+        pos <- regexpr("[a-zA-Z0-9_\\.]+$", code, useBytes = TRUE)
 	    name <- substring(code, pos)
 	    return(name)
     }

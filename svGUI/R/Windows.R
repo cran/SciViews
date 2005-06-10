@@ -8,7 +8,7 @@ function(width = 7, height = 7, pointsize = 12, record = getOption("graphics.rec
 	windows(width = width, height = height, pointsize = pointsize, record = record,
 		rescale = rescale, xpinch = xpinch, ypinch = ypinch, bg = bg, canvas = canvas,
 		gamma = gamma, xpos = xpos, ypos = ypos, buffered = buffered)
-	Cmd <- "«Graph"
+	Cmd <- "<<<<Graph"
 	invisible(guiCmd(Cmd))
 }
 

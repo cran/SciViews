@@ -140,7 +140,7 @@ function(id = "default", selobject, objects, envir,  path = NULL) {
 		MenuFile <- file.path(path, paste("Menu_", id, ".txt", sep=""))
 		write.table(Menu, file = MenuFile, row.names = FALSE, quote = FALSE, sep = "\t")
 		# Warn the client that the menu is ready by returning a command
-        return(guiCmd(paste("«Menu", id)))
+        return(guiCmd(paste("<<<<Menu", id)))
 	} else return(Menu) # If no path is specified, just return the data frame
 }
 

@@ -78,7 +78,7 @@
     # Use wxTextEntryDialog()
     ## parent argument not used here yet!
     ### TO DO...
-
+	stop("Not implemented yet!")
     # If 'x' is clicked on the dialog box, it return NULL
     # but we need character(0) instead!
     #if (is.null(res)) res <- character(0)

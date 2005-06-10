@@ -1,6 +1,6 @@
 Package: svIO
 Title: SciViews GUI API - Data import/export
-Depends: svMisc, R2HTML
+Depends: R (>= 2.1.0), svMisc, R2HTML
 Imports: utils
 Suggests: Hmisc
 Description: Various functions to translate objects and exchange them with external applications

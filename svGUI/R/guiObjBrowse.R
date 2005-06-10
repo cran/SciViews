@@ -75,8 +75,8 @@ function(id = "default", env.name = NULL, pos = NULL, all.names = NULL, pattern 
 
 	# If something changed, warn the GUI client he must update its object browser
     Cmd <- ""
-	if (ChangedSearch) Cmd <- "«Search"
-	if (ChangedList) Cmd <- paste(Cmd, "«List ", id, sep="")
+	if (ChangedSearch) Cmd <- "<<<<Search"
+	if (ChangedList) Cmd <- paste(Cmd, "<<<<List ", id, sep="")
     return(guiCmd(Cmd))
 }
 

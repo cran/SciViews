@@ -82,7 +82,7 @@ function() {
     # Verify if I am not already registered under this topic
     if (!tclvalue(.Tcl("dde servername {}")) == topic) {
         # Check that this server name does not exist yet
-        if (length(grep(paste("{TclEval ", topic, "}", sep = ""), tclvalue(.Tcl("dde services TclEval {}")))) > 0)
+        if (length(grep(paste("[{]TclEval ", topic, "[}]", sep = ""), tclvalue(.Tcl("dde services TclEval {}")), useBytes = TRUE)) > 0)
             invisible("DDE not installed: server name already in use (by another R instance?)!")
         # Register me as a dde server with this topic name
         .Tcl(paste("dde servername", topic))

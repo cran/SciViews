@@ -16,7 +16,7 @@ function(fname, firstarg = NULL, type = "tip") {
 		if (length(res) == 1 && res == "")
 			return(FALSE)
 		# If something changed, warn the GUI client he must update its object browser
-		Cmd <- paste(c("«Tip", res), collapse = "\n")
+		Cmd <- paste(c("<<<<Tip", res), collapse = "\n")
 		return(guiCmd(Cmd))
 	 
 	 } else if (type == "list") {
@@ -56,7 +56,7 @@ function(fname, firstarg = NULL, type = "tip") {
 			
 		}
 		# If there is a non empty list
-		Cmd <- paste(c("«CodeList", res), collapse = "\n")
+		Cmd <- paste(c("<<<<CodeList", res), collapse = "\n")
         return(guiCmd(Cmd))
 		
 	} else if (type == "listitems") {
@@ -71,7 +71,7 @@ function(fname, firstarg = NULL, type = "tip") {
 		res <- res[res != "|subset"]
 		if (length(res) == 0)
 			return(FALSE)
-		Cmd <- paste(c("«CodeList", res), collapse = "\n")
+		Cmd <- paste(c("<<<<CodeList", res), collapse = "\n")
         return(guiCmd(Cmd))
 	}
 }

@@ -314,8 +314,11 @@
     res <- display(Tpl)
     # Do we have to execute it?
     if (is.null(execfun)) execfun <- "guiEval" # Default evaluator
-    if (execfun != "" && exists(execfun, where = 1, mode = "function"))
-        get(execfun, pos = 1, mode = "function")(res)
+    if (execfun != "") {
+		if (exists(execfun, where = -1, mode = "function")) {
+        	get(execfun, pos = -1, mode = "function")(res)
+		} else warning(execfun, " not found!")
+ 	}
     # Return res invisibly
     return(invisible(res))
 }

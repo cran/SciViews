@@ -1,5 +1,5 @@
 Package: svIDE
 Title: SciViews GUI API - IDE and code editor functions
-Depends: tcltk
+Depends: R (>= 2.1.0), tcltk
 Imports: utils, methods
 Description: Supporting functions for the GUI API (create files and interact with external IDE/code editors)

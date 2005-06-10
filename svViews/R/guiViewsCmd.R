@@ -16,5 +16,5 @@ function(type, typelist, command, file, ...) {
 	}
 	if (length(grep("browse = FALSE", command)) == 0)
 		command <- sub("[(]", paste("(file = \"", file, "\", browse = FALSE, ", sep = ""), command)	
-    return(paste("«View ", type, "|", paste(typelist, collapse = ","), "|", command, sep = ""))
+    return(paste("<<<<View ", type, "|", paste(typelist, collapse = ","), "|", command, sep = ""))
 }

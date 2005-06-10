@@ -19,7 +19,7 @@ function() {
 		options(view.title = NULL)
 
 	    # Indicate to the client that he must quit
-	    guiCmd("«Quit")
+	    guiCmd("<<<<Quit")
 
 	    # Reset original prompt
 		options(prompt="> ")

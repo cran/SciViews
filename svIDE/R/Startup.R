@@ -8,5 +8,6 @@ function(lib, pkg) {
     # If an IDE is defined, start it now
     IDE <- getOption("IDE")
     if (!is.null(IDE) && file.exists(IDE))
-        system(IDE, wait = FALSE)
+        system(paste("\"", IDE, "\"", sep = ""), wait = FALSE)
 }
+

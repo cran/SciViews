@@ -13,7 +13,7 @@ function(pos = 2:length(search())){
 	# Eliminate items containing <-, __, -, !, $, %, &, |, *, +, /, :, [ or =
 	searchit <- c("<-", "__", "-", "!", "[$]", "[%]", "[&]", "[|]", "[*]", "[+]", "[/]", ":", "[[]", "=")
 	for (i in 1:length(searchit)) {
-		elim <- grep(searchit[i], res)
+		elim <- grep(searchit[i], res, useBytes = TRUE)
 		if (length(elim) > 0) res <- res[-elim]
 	}
 	# Eliminate some other items (reserved keywords already introduced in keyword1 list, and other stuff)

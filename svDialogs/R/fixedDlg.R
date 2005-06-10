@@ -285,22 +285,22 @@
     #if (!Require(tcltk))
     #    stop("Package 'tcltk' required. Please, (re)install it!")
     # We construct the list dialog box with tcltk commands
-    # Make sure fonts are defined
-    fonts <- guiSetFonts.tcltk(getOption("GUIfontstyle"))
+    # Get style and use fonts size
+    style <- guiSetStyle.tcltk(getOption("guiStyle"))
     # Size widgets according to text font measure
-    pixwidth <- as.integer(width * fonts$measure["text"])
+    pixwidth <- as.integer(width * style$font.measure["text"])
     .res.list <<- character(0)# Result is temporary stored in this variable
     lbox <- tktoplevel()
     # It does not work? tkwm.maxsize(lbox, width, -1)
     tktitle(lbox) <- title
-    tkgrid(tklabel(lbox, text = message, font = fonts$label), sticky = "w", padx = 5)
+    tkgrid(tklabel(lbox, text = message, font = style$font.text), sticky = "w", padx = 5)
     lstFrame <- tkframe(lbox, width = as.character(width))
     scr <- tkscrollbar(lstFrame, repeatinterval = 5,
            command = function(...) tkyview(tl, ...))
     SelMode <- if (multi) "extended" else "single"
     tl <- tklistbox(lstFrame, width = width - 2, height = 5, selectmode = SelMode,
           yscrollcommand = function(...) tkset(scr, ...), background = "white",
-          font = fonts$text)
+          font = style$font.text)	#, relief = style$relief)
     tkgrid(tl, scr)
     tkgrid.configure(scr, rowspan = 5, sticky = "nsw")
     tkgrid(lstFrame, padx = 5, pady = 2, sticky = "w")
@@ -311,20 +311,19 @@
         tkselection.set(tl, default[i] - 1)  # Default indexing starts at zero.
         tkyview(tl, default[1] - 1)# Make sure first selected item is visible
     }
-    sep <- tkcanvas(lbox, height = "0",relief = "groove", borderwidth = "1",
-        width = pixwidth)
+    sep <- tkcanvas(lbox, height = "0",relief = "groove", borderwidth = "1") #, width = pixwidth)
     tkgrid(sep)
     onOk <- function() {
         .res.list <<- items[as.numeric(tkcurselection(tl))+1]
         tkdestroy(lbox)
-        res
+        .res.list
     }
     butFrame <- tkframe(lbox)
     wbutOK <- tkbutton(butFrame, text = "OK", width="12", command = onOk,
-        default = "active", font = fonts$label)
+        default = "active", font = style$font.text)
     wlabSep <- tklabel(butFrame, text = " ")
     wbutCancel <- tkbutton(butFrame, text = "Cancel", width="12",
-        command = function() tkdestroy(lbox), font = fonts$label)
+        command = function() tkdestroy(lbox), font = style$font.text)
     tkgrid(wbutOK, wlabSep, wbutCancel, sticky = "w")
     tkgrid(butFrame, pady = 5)
     .Tcl("update idletasks")
@@ -468,7 +467,9 @@
     ## should look how to implement it!
     res <- as.character(tkgetOpenFile(title = title, initialfile = defaultFile,
         initialdir = defaultDir, multiple = multi, filetypes = filters))
-    if (length(res) == 1 && res == "") res <- character(0)
+	# If multi=FALSE and there is a space in the path, the later one is splitted!
+	if (!multi) res <- paste(res, collapse = "")
+	if (length(res) == 1 && res == "") res <- character(0)
     return(invisible(as.character(res)))
 }
 
@@ -563,7 +564,9 @@
     res <- tclvalue(tkgetSaveFile(title = title, initialfile = defaultFile,
         initialdir = defaultDir, defaultextension = defaultExt,
         filetypes = filters))
-    if (res == "") res <- character(0)# return this if cnacelled!
+    # If there is a space in the path, the later one is splitted!
+	res <- paste(res, collapse = "")
+    if (res == "") res <- character(0)# return this if cancelled!
     return(invisible(as.character(res)))
 }
 

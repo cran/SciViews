@@ -11,7 +11,7 @@
 \usage{
 guiInstall(HideTkWindow = TRUE)
 guiUninstall()
-guiStart(gui = "\"%SciViews_Home%/bin/RConsole.exe\" -connect")
+guiStart(gui = "\"\%SciViews_Home\%/bin/RConsole.exe\" -connect")
 guiStop()
 }
 
