@@ -12,7 +12,7 @@ function(gui = "\"%SciViews_Home%/bin/RConsole.exe\" -connect") {
 	        stop("GUI communication feature does not seem to be installed. Run 'guiInstall()' first!")
 
 	    # Indicate that this is a SciViews program
-		options(SciViews.version = 0.7-5)
+		options(SciViews.version = 0.8-8)
 
 		# Indicate that the GUI supports also SciViews TclTk exchange protocol
 	    .Platform <- .Platform
@@ -44,8 +44,10 @@ function(gui = "\"%SciViews_Home%/bin/RConsole.exe\" -connect") {
 		#### TO DO: redefine editor, pager, etc...
 
 		# Change the prompt to indicate we are "SciViews-ready"
-		options(prompt = "» ")
-		options(continue = "÷ ")
+		# Due to changes in R 2.1.0 (internationalization)
+		# Use of special characters is not advised => this is commented out!
+		#options(prompt = "» ")
+		#options(continue = "÷ ")
 	}
 
     # Done!

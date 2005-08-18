@@ -6,8 +6,8 @@ function(HideTkWindow = TRUE){
     #Require(svViews)
     if (!capabilities("tcltk"))
 		stop("Tcl/Tk is required but is not supported on this system!")
-    if (!(as.numeric(R.Version()$major) >= 2 || as.numeric(R.Version()$minor) >= 0))
-		warning("This feature was not tested on a lower version of R than 2.0.0. Please, upgrade R if you have problems.")
+    if (!(as.numeric(R.Version()$major) >= 2 || as.numeric(R.Version()$minor) >= 1))
+		warning("This feature was not tested on a lower version of R than 2.1.0. Please, upgrade R if you have problems.")
 
 	# Here the code is different, depending on the platform
 	if (!.Platform$OS == "windows") { # non-Windows

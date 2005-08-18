@@ -2,8 +2,9 @@
 
 ".onLoad" <-
 function(lib, pkg) {
-    # Starting the DDE server automatically if under Windows
-    if (.Platform$OS.type == "windows") guiDDEInstall()
+    # Starting the DDE server automatically if under Windows and option use.DDE == TRUE 
+    use.DDE <- getOption("use.DDE")
+    if (.Platform$OS.type == "windows" && !is.null(use.DDE) && use.DDE) guiDDEInstall()
     
     # If an IDE is defined, start it now
     IDE <- getOption("IDE")

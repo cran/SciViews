@@ -18,7 +18,7 @@ guiComplete(code, file = NULL, givetype = FALSE, fieldsep = "|")
   \item{code}{ A piece of R code (in a character string) to analyze }
   \item{file}{ A file where to return the result ("", or NULL for none. You can use "clipboard" to send
   the result to the clipboard under Windows only; it raises an error currently on other platforms) }
-  \item{onlyargs}{ Do we retrun the whole calltip or only the function arguments? }
+  \item{onlyargs}{ Do we return the whole calltip or only the function arguments? }
   \item{maxwidth}{ Reformat the calltip to maxwith (use 0 for not reformatting it) }
   \item{location} { If \code{TRUE} then the location (in which package the function resides) is appended to the calltip between square brackets }
   \item{givetype}{ Return also the type of each object in the completion list (possibly
@@ -34,8 +34,10 @@ guiComplete(code, file = NULL, givetype = FALSE, fieldsep = "|")
 \note{ DDE is a communication protocol that exists only under Windows. Consequently,
        those functions cannot be used (yet) on other platforms.
 
-       On loading of the package, if the \code{options(IDE = "[path.to.exe]")}  is defined,
-       then the IDE is automatically started.
+       On loading of the package, if the \code{option(use.DDE = TRUE)} is defined, the
+       DDE server (\code{guiDDEInstall()}) is automatically installed when the package
+       is loaded. Also if \code{options(IDE = "[path.to.exe]")}  is defined,
+       then that IDE is automatically started afterward.
 }
 
 \seealso{ \code{\link{CallTip}}, \code{\link{Complete}} }
@@ -47,8 +49,10 @@ guiComplete(code, file = NULL, givetype = FALSE, fieldsep = "|")
         ## into an interactive R session with the tcltk package loaded
 
         ## Here is how you can test these features under Windows
+        options(use.DDE = TRUE)
         library(svIDE) # This should automatically start the
-        # DDE server named 'TclEval SciViewsR'
+        # DDE server named 'TclEval SciViewsR', according to the option set
+        
         # Get some data in the user workspace
         data(trees)
         a <- 1
