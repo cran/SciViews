@@ -1,7 +1,7 @@
 importFrom(svMisc, listCustoms, getTemp, guiCmd)
 #importFrom(R2HTML, HTML, HTMLhr, HTMLInsertGraph, HTMLli, HTML.cormat)
 importFrom(utils, browseURL, methods)
-importFrom(lattice, lset)
+importFrom(lattice, trellis.par.set)
 importFrom(MASS, lda)
 
 import(R2HTML, graphics, grDevices, stats)

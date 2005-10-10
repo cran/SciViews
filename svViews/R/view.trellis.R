@@ -19,8 +19,7 @@ function(x,  type = "print", objname = deparse(substitute(x)), file = guiViewsFi
 		viewHTMLinit(objname = objname, type = type, file = file, CSSFile = CSSFile, command = command)
 		graphfic = paste(tempfile(), ".png", sep = "")
 		png(graphfic, width = 700, height = 700)
-        # lset from lattice is DEPRECATED!!!
-        lset(list(background = list(col = "white")))
+        trellis.par.set(list(background = list(col = "white")))
 		print(x)
 		dev.off()
 		HTMLInsertGraph(graphfic, Width = "700", file = file)

@@ -29,6 +29,9 @@ function(lib, pkg) {
 			cat("Variable '.svPath' points to", svPath, "\n")
 			cat("However, 'RConsole.exe' is not found in its ./bin subdirectory\n")
 			cat("Make sure SciViews-R is installed and '.svPath' points to the right directory\n")
+			cat("\nThe best way to tell where SciViews is installed is by setting the\n")
+			cat("environment variable 'SciViews_Home' with a value corresponding to the actual\n")
+			cat("directory where you have installed SciViews (in Unix notation, that is, using '/'.\n")
 			cat("You can download setup of SciViews-R at http://www.sciviews.org/SciViews-R\n")
 		}
 	}
