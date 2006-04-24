@@ -1,0 +1,14 @@
+importFrom(svMisc, guiCmd, listCustoms)
+# In R CMD CHECK: warning svMisc not required!
+
+if(tools:::.OStype() == "windows") {
+	importFrom(utils, readClipboard)
+}
+
+import(R2HTML)
+
+export(clippaste, copy, "export")
+
+S3method(export, default)
+S3method(export, data.frame)
+S3method(export, matrix)

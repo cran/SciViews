@@ -1,0 +1,5 @@
+Package: svSocket
+Title: SciViews GUI API - R Socket Server
+Depends: R (>= 2.1.0), tcltk
+Imports: svMisc
+Description: Implements a simple socket server allowing to connect GUI clients to R
