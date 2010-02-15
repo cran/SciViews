@@ -1,6 +1,0 @@
-Package: svGUI
-Title: SciViews GUI API - Main GUI features
-Depends: R (>= 2.1.0), tcltk, R2HTML, svMisc, svIO, svViews
-Imports: grDevices
-SystemRequirements: SciViews-R (the GUI client under Windows) can be obtained from http://www.sciviews.org/SciViews-R
-Description: Functions to communicate with a GUI client, to implement an object browser, etc...
