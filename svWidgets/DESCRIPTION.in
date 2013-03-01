@@ -1,6 +1,0 @@
-Package: svWidgets
-Title: SciViews GUI API - Widgets & Windows
-Depends: R (>= 2.1.0), tcltk
-Imports: utils, svMisc
-Suggests: tcltk2
-Description: High level management of widgets, windows and other graphical resources

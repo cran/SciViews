@@ -1,11 +1,19 @@
-Bundle: SciViews
-Contains: svMisc svIO svViews svDialogs svSocket svGUI svIDE svWidgets
+Package: SciViews
+Type: Package
+Title: SciViews GUI API - Main package
+Imports: ellipse
+Depends: R (>= 2.6.0), stats, grDevices, graphics, MASS
+Enhances: base
+Description: Functions to install SciViews additions to R, and more (various) tools
 Version: 0.9-5
-Date: 2006-04-24
-Author: Philippe Grosjean & Eric Lecoutre
+Date: 2013-03-01
+Author: Philippe Grosjean
 Maintainer: Philippe Grosjean <phgrosjean@sciviews.org>
-BundleDescription: SciViews GUI API
-  A series of packages to implement a complete reusable GUI API for R.
-License: GPL 2 or above
+License: GPL-2
+LazyLoad: yes
 URL: http://www.sciviews.org/SciViews-R
-Packaged: Mon Apr 24 12:08:20 2006; Philippe Grosjean
+BugReports: https://r-forge.r-project.org/tracker/?group_id=194
+Packaged: 2014-03-01 20:34:11 UTC; phgrosjean
+NeedsCompilation: no
+Repository: CRAN
+Date/Publication: 2014-03-02 12:40:42
