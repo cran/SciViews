@@ -1,15 +1,25 @@
-= SciViews To Do list
+# SciViews To Do list
+
+* file_head()
+
+* attrNames() or attr_names() like slotNames()
+
+* unscale() to revert the effect of scale()?
+
+* is.wholenumber()
+
+* other xxx. functions for those using na.rm = FALSE like mean, median, sd, var,
+  quantile, fivenum, ...
 
 * Refine panel.xxx() functions to avoid warning in case we provide non-par
-arguments to pairs() and design a better mechanism to define default (colors,
-line type and weight, etc.).
+  arguments to pairs() and design a better mechanism to define default (colors,
+  line type and weight, etc.).
 
 * A better grid() for log scale, a grid() with intermediate lines (between two
-axis ticks), and a slightly different line for origin axes.
+  axis ticks), and a slightly different line for origin axes.
 
 * A plot.htest() method that graphically shows the test results (needs specific
-representation for each test => difficult, but think about a solution for that
-particular problem!)
+  representation for each test => how to do that?
 
 * QQ-plot and statistical distributions plots.
 
@@ -23,23 +33,24 @@ particular problem!)
 
 * For correspondance analysis, see ca package.
 
-* recordPlot(), replayPlot() to save graphs between sessions.
-Look also at dev.control("inhibit") and dev.interactive().
+* What about c.factor()??? C() applied to factor currently just produces
+  rubbish... But, we may break existing code!
 
-* gui? (dialog box), cmd? (fill dialog box with values) or gui? (do nothing),
-  cmd? (run it).
+* unlist() should really be S3 generic with unlist.default + unlist.factor being
+  the original unlist() function. Need also at least unlist.Date(),
+  unlist.POSIXct() and unlist.POSIXlt(), although the first two treatments are
+  already correct!
 
-* Rethink depends, imports and suggests to install and/or load the right number
-of packages (+ options to avoiding to load certains packages, in certain cases).
+* unlist() applies to a list of matrices or arrays or data frames of the same
+  shape, i.e., same objects types and same column names should really rbind()
+  items... but using rbind() is inefficient => need another solution. Also, this
+  should be called differently to unlist() to avoid breaking code, why not
+  lbind()?
 
-* Save SciViews-R/SciViews-K communication parameters and reconfigure the socket
-server accordingly (do not start the socket server automatically in case there
-is no config file).
+* Generic method bare(object) to drop all attributes except the one required to
+  define a given object... perhaps onlyNames(object) that does the same as c(x),
+  but see ?c.
 
-* Automatically load projects and snippets associated with a package. Use a
-  context string that ensures that we have require(XXXX) somewhere up the scrip
-  for using a command in a R package. Reload the tooltips definition each time
-  we use them... or better: use contextual arguments: svMisc::expr => can
-  superseed expr tooltip but uses it, if there is no svMisc::expr tooltip!
+* Analyze this: http://obeautifulcode.com/R/How-R-Searches-And-Finds-Stuff/
 
-* Translation of this package (and what about the doc?).
+* Translation of this package.
