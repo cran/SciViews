@@ -1,6 +1,6 @@
 Package: SciViews
 Type: Package
-Version: 0.9-13
+Version: 0.9-13.1
 Date: 2018-01-05
 Title: SciViews - Main package
 Description: Functions to install SciViews additions to R, and more
@@ -19,7 +19,7 @@ URL: https://github.com/SciViews/SciViews,
 BugReports: https://github.com/SciViews/SciViews/issues
 RoxygenNote: 6.0.1
 NeedsCompilation: no
-Packaged: 2018-01-06 13:55:09 UTC; appveyor
+Packaged: 2019-11-16 13:51:40 UTC; hornik
 Author: Philippe Grosjean [aut, cre]
 Repository: CRAN
-Date/Publication: 2018-01-06 22:43:27 UTC
+Date/Publication: 2019-11-16 20:17:58 UTC

@@ -158,3 +158,5 @@ panel.cor <- panel_cor # Backward compatibility
 #' @export
 #' @rdname panels
 panel_smooth <- panel.smooth
+## Fix for c77336.
+formals(panel_smooth)$col.smooth <- "red"
