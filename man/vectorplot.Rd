@@ -9,19 +9,46 @@
 \usage{
 vectorplot(x, ...)
 
-\method{vectorplot}{default}(x, y, col = par("col"), circle.col = "gray",
-  ar.length = 0.1, pos = NULL, cex = par("cex"), labels = NULL, ...)
+\method{vectorplot}{default}(
+  x,
+  y,
+  col = par("col"),
+  circle.col = "gray",
+  ar.length = 0.1,
+  pos = NULL,
+  cex = par("cex"),
+  labels = NULL,
+  ...
+)
 
-\method{vectorplot}{loadings}(x, choices = 1L:2L, col = par("col"),
-  circle.col = "gray", ar.length = 0.1, pos = NULL, cex = par("cex"),
-  labels = rownames(x), main = deparse(substitute(x)), ...)
+\method{vectorplot}{loadings}(
+  x,
+  choices = 1L:2L,
+  col = par("col"),
+  circle.col = "gray",
+  ar.length = 0.1,
+  pos = NULL,
+  cex = par("cex"),
+  labels = rownames(x),
+  main = deparse(substitute(x)),
+  ...
+)
 
-\method{vectorplot}{Correlation}(x, choices = 1L:2L, col = par("col"),
-  circle.col = "gray", ar.length = 0.1, pos = NULL, cex = par("cex"),
-  labels = rownames(x), main = deparse(substitute(x)), ...)
+\method{vectorplot}{Correlation}(
+  x,
+  choices = 1L:2L,
+  col = par("col"),
+  circle.col = "gray",
+  ar.length = 0.1,
+  pos = NULL,
+  cex = par("cex"),
+  labels = rownames(x),
+  main = deparse(substitute(x)),
+  ...
+)
 }
 \arguments{
-\item{x}{An object that has a \code{\link[=vectorplot]{vectorplot()}} method, like 'loadings'
+\item{x}{An object that has a [SciViews::vectorplot()] method, like 'loadings'
 or 'correlation', or a numeric vector with 0 < values < 1.}
 
 \item{...}{Further arguments passed to plot functions.}
@@ -34,7 +61,7 @@ or 'correlation', or a numeric vector with 0 < values < 1.}
 
 \item{ar.length}{The length of the arrows.}
 
-\item{pos}{The position of text relative to arrows. If \code{NULL}, a suitable
+\item{pos}{The position of text relative to arrows. If `NULL`, a suitable
 position is calculated according to the direction where the arrows are
 pointing.}
 
@@ -52,7 +79,7 @@ their side-effect of drawing a vector plot.
 }
 \description{
 Plots vectors with 0 < norms < 1 inside a circle. These plots are mainly
-designed to represent variables in principal components space for PCAs.
+ designed to represent variables in principal components space for PCAs.
 }
 \examples{
 # Create a PCA and plot loadings and correlations
@@ -63,9 +90,7 @@ vectorplot(Correlation(iris.pca))
 # the window to reveal cropped labels...
 }
 \seealso{
-\code{\link[=pcomp]{pcomp()}}, \code{\link[=loadings]{loadings()}}, \code{\link[=Correlation]{Correlation()}}
+[SciViews::pcomp()], [stats::loadings()], [SciViews::Correlation()]
 }
-\concept{
-Vector and circular plot
-}
+\concept{Vector and circular plot}
 \keyword{aplot}

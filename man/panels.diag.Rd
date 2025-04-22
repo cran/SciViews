@@ -16,25 +16,79 @@ panel_boxplot(x, col = par("col"), box.col = "cornsilk", ...)
 
 panel.boxplot(x, col = par("col"), box.col = "cornsilk", ...)
 
-panel_density(x, adjust = 1, rug = TRUE, col = par("col"),
-  lwd = par("lwd"), line.col = col, line.lwd = lwd, ...)
+panel_density(
+  x,
+  adjust = 1,
+  rug = TRUE,
+  col = par("col"),
+  lwd = par("lwd"),
+  line.col = col,
+  line.lwd = lwd,
+  ...
+)
 
-panel.density(x, adjust = 1, rug = TRUE, col = par("col"),
-  lwd = par("lwd"), line.col = col, line.lwd = lwd, ...)
+panel.density(
+  x,
+  adjust = 1,
+  rug = TRUE,
+  col = par("col"),
+  lwd = par("lwd"),
+  line.col = col,
+  line.lwd = lwd,
+  ...
+)
 
-panel_hist(x, breaks = "Sturges", hist.col = "cornsilk",
-  hist.border = NULL, hist.density = NULL, hist.angle = 45, ...)
+panel_hist(
+  x,
+  breaks = "Sturges",
+  hist.col = "cornsilk",
+  hist.border = NULL,
+  hist.density = NULL,
+  hist.angle = 45,
+  ...
+)
 
-panel.hist(x, breaks = "Sturges", hist.col = "cornsilk",
-  hist.border = NULL, hist.density = NULL, hist.angle = 45, ...)
+panel.hist(
+  x,
+  breaks = "Sturges",
+  hist.col = "cornsilk",
+  hist.border = NULL,
+  hist.density = NULL,
+  hist.angle = 45,
+  ...
+)
 
-panel_qqnorm(x, pch = par("pch"), col = par("col"), bg = par("bg"),
-  cex = par("cex"), lwd = par("lwd"), qq.pch = pch, qq.col = col,
-  qq.bg = bg, qq.cex = cex, qqline.col = qq.col, qqline.lwd = lwd, ...)
+panel_qqnorm(
+  x,
+  pch = par("pch"),
+  col = par("col"),
+  bg = par("bg"),
+  cex = par("cex"),
+  lwd = par("lwd"),
+  qq.pch = pch,
+  qq.col = col,
+  qq.bg = bg,
+  qq.cex = cex,
+  qqline.col = qq.col,
+  qqline.lwd = lwd,
+  ...
+)
 
-panel.qqnorm(x, pch = par("pch"), col = par("col"), bg = par("bg"),
-  cex = par("cex"), lwd = par("lwd"), qq.pch = pch, qq.col = col,
-  qq.bg = bg, qq.cex = cex, qqline.col = qq.col, qqline.lwd = lwd, ...)
+panel.qqnorm(
+  x,
+  pch = par("pch"),
+  col = par("col"),
+  bg = par("bg"),
+  cex = par("cex"),
+  lwd = par("lwd"),
+  qq.pch = pch,
+  qq.col = col,
+  qq.bg = bg,
+  qq.cex = cex,
+  qqline.col = qq.col,
+  qqline.lwd = lwd,
+  ...
+)
 }
 \arguments{
 \item{x}{A numeric vector.}
@@ -44,9 +98,9 @@ panel.qqnorm(x, pch = par("pch"), col = par("col"), bg = par("bg"),
 \item{box.col}{The filling color of the boxplots.}
 
 \item{...}{Further arguments to plot functions, or functions that construct
-items, like \code{\link[=density]{density()}}, depending on the context.}
+items, like [stats::density()], depending on the context.}
 
-\item{adjust}{The bandwidth adjustment factor, see \code{\link[=density]{density()}}.}
+\item{adjust}{The bandwidth adjustment factor, see [stats::density()].}
 
 \item{rug}{Do we add a rug representation (1-d plot) of the points too?}
 
@@ -57,8 +111,8 @@ items, like \code{\link[=density]{density()}}, depending on the context.}
 \item{line.lwd}{The width of the line.}
 
 \item{breaks}{The number of breaks, the name of a break algorithm, a vector
-of breakpoints, or any other acceptable value for \code{breaks =} argument of
-\code{\link[=hist]{hist()}}.}
+of breakpoints, or any other acceptable value for `breaks =` argument of
+[graphics::hist()].}
 
 \item{hist.col}{The filling color for the histograms.}
 
@@ -92,11 +146,11 @@ These functions return nothing and are used for their side effect of
 plotting in panels of composite plots.
 }
 \description{
-Several panel plots that can be used with \code{\link[=pairs]{pairs()}}.
+Several panel plots that can be used with [graphics::pairs()].
 }
 \details{
-Panel functions \code{\link[=panel_boxplot]{panel_boxplot()}}, \code{\link[=panel_density]{panel_density()}}, \code{\link[=panel_hist]{panel_hist()}}
-and \code{\link[=panel_qqnorm]{panel_qqnorm()}} should be used only to plot univariate data on the
+Panel functions [SciViews::panel_boxplot()], [SciViews::panel_density()], [SciViews::panel_hist()]
+and [SciViews::panel_qqnorm()] should be used only to plot univariate data on the
 diagonals of pair plots (or scatterplot matrix).
 }
 \examples{
@@ -115,13 +169,11 @@ pairs(trees, panel = panel_smooth, diag.panel = panel_qqnorm)
 pairs(trees, diag.panel = panel_qqnorm, qqline.col = 2, qq.cex = .5, qq.pch = 3)
 }
 \seealso{
-\code{\link[=pairs]{pairs()}}, \code{\link[=boxplot]{boxplot()}}, \code{\link[=hist]{hist()}}, \code{\link[=density]{density()}}, \code{\link[=qqnorm]{qqnorm()}}
+[graphics::pairs()], [graphics::boxplot()], [graphics::hist()], [stats::density()], [stats::qqnorm()]
 }
 \author{
-Philippe Grosjean \href{mailto:phgrosjean@sciviews.org}{phgrosjean@sciviews.org}, but code inspired from
-\code{spm()} in package \strong{car}.
+Philippe Grosjean <phgrosjean@sciviews.org>, but code inspired from
+`spm()` in package **car**.
 }
-\concept{
-panel plots
-}
+\concept{panel plots}
 \keyword{aplot}

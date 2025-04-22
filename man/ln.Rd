@@ -9,7 +9,9 @@
 \alias{E}
 \alias{lb}
 \title{Logarithms.}
-\format{An object of class \code{numeric} of length 1.}
+\format{
+An object of class \code{numeric} of length 1.
+}
 \usage{
 ln(x)
 
@@ -27,9 +29,16 @@ lb()
 \item{x}{A numeric or complex vector.}
 }
 \description{
-To avoid confusion using the default \code{log()} function, which is natural
+To avoid confusion using the default `log()` function, which is natural
 logarithm, but spells out like base 10 logarithm in the mind of some
-beginneRs, we define \code{ln()} and \code{ln1p()} as wrappers for \code{log()`` with default}base = exp(1)\code{argument and for}log1p()\code{, respectively. For similar reasons,}lg()\code{is a wrapper of}log10()\code{(there is no possible confusion here, but 'lg' is another common notation for base 10 logarithm).}lg1p()\code{is a convenient way to use the optimized code to calculate the logarithm of x + 1, but returning the result in base 10 logarithm.}E\code{is the Euler constant and is provided for convenience as}exp(1)\code{. Finally}lb()\code{is a synonym of}log2()`.
+beginneRs, we define `ln()` and `ln1p()` as wrappers for `log()`` with
+default `base = exp(1)` argument and for `log1p()`, respectively.
+For similar reasons, `lg()` is a wrapper of `log10()` (there is no possible
+confusion here, but 'lg' is another common notation for base 10 logarithm).
+`lg1p()` is a convenient way to use the optimized code to calculate the
+logarithm of x + 1, but returning the result in base 10 logarithm. `E` is the
+Euler constant and is provided for convenience as `exp(1)`. Finally `lb()` is
+a synonym of `log2()`.
 }
 \examples{
 ln(exp(3))              # Same as log(exp(3))
@@ -40,10 +49,8 @@ E^4                     # Similar to exp(4), but different calculation!
 lb(1:3)                 # Wrapper for log2()
 }
 \seealso{
-\code{\link[=log]{log()}}
+[log()]
 }
-\concept{
-logarithms and exponentials
-}
+\concept{logarithms and exponentials}
 \keyword{datasets}
 \keyword{math}

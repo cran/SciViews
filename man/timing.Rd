@@ -7,14 +7,14 @@
 timing(expr, gc.first = TRUE)
 }
 \arguments{
-\item{expr}{Valid \R expression to be timed. If missing, \code{\link[=proc.time]{proc.time()}} is
+\item{expr}{Valid \R expression to be timed. If missing, [proc.time()] is
 used instead.}
 
 \item{gc.first}{Logical - should a garbage collection be performed immediately
-before the timing? Default is \code{TRUE}.}
+before the timing? Default is `TRUE`.}
 }
 \description{
-Similar to \code{system.time()} but returns a more convenient 'difftime' object.
+Similar to `system.time()` but returns a more convenient 'difftime' object.
 }
 \examples{
 test <- timing(Sys.sleep(0.5))
@@ -22,5 +22,5 @@ test
 attr(test, "details")
 }
 \seealso{
-\code{\link[=system.time]{system.time()}}
+[system.time()]
 }

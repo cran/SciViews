@@ -22,8 +22,13 @@ Correlation(x, ...)
 
 \method{correlation}{formula}(formula, data = NULL, subset, na.action, ...)
 
-\method{correlation}{default}(x, y = NULL, use = "everything",
-  method = c("pearson", "kendall", "spearman"), ...)
+\method{correlation}{default}(
+  x,
+  y = NULL,
+  use = "everything",
+  method = c("pearson", "kendall", "spearman"),
+  ...
+)
 
 is.Correlation(x)
 
@@ -35,52 +40,75 @@ as.correlation(x)
 
 \method{print}{Correlation}(x, digits = 3, cutoff = 0, ...)
 
-\method{summary}{Correlation}(object, cutpoints = c(0.3, 0.6, 0.8, 0.9, 0.95),
-  symbols = c(" ", ".", ",", "+", "*", "B"), ...)
+\method{summary}{Correlation}(
+  object,
+  cutpoints = c(0.3, 0.6, 0.8, 0.9, 0.95),
+  symbols = c(" ", ".", ",", "+", "*", "B"),
+  ...
+)
 
 \method{print}{summary.Correlation}(x, ...)
 
-\method{plot}{Correlation}(x, y = NULL, outline = TRUE, cutpoints = c(0.3,
-  0.6, 0.8, 0.9, 0.95), palette = rwb.colors, col = NULL, numbers = TRUE,
-  digits = 2, type = c("full", "lower", "upper"), diag = (type == "full"),
-  cex.lab = par("cex.lab"), cex = 0.75 * par("cex"), ...)
+\method{plot}{Correlation}(
+  x,
+  y = NULL,
+  outline = TRUE,
+  cutpoints = c(0.3, 0.6, 0.8, 0.9, 0.95),
+  palette = rwb.colors,
+  col = NULL,
+  numbers = TRUE,
+  digits = 2,
+  type = c("full", "lower", "upper"),
+  diag = (type == "full"),
+  cex.lab = par("cex.lab"),
+  cex = 0.75 * par("cex"),
+  ...
+)
 
-\method{lines}{Correlation}(x, choices = 1L:2L, col = par("col"), lty = 2,
-  ar.length = 0.1, pos = NULL, cex = par("cex"), labels = rownames(x),
-  ...)
+\method{lines}{Correlation}(
+  x,
+  choices = 1L:2L,
+  col = par("col"),
+  lty = 2,
+  ar.length = 0.1,
+  pos = NULL,
+  cex = par("cex"),
+  labels = rownames(x),
+  ...
+)
 }
 \arguments{
 \item{x}{A numeric vector, matrix or data frame (or any object for
-\code{is.Correlation()}, \code{as.Correlation()}.}
+`is.Correlation()`, `as.Correlation()`.}
 
 \item{...}{Further arguments passed to functions.}
 
 \item{formula}{A formula with no response variable, referring only to numeric
 variables.}
 
-\item{data}{An optional data frame (or similar: see \code{\link[=model.frame]{model.frame()}})
-containing the variables in the formula \code{formula}. By default the variables
-are taken from \code{environment(formula)}.}
+\item{data}{An optional data frame (or similar: see [stats::model.frame()])
+containing the variables in the formula `formula`. By default the variables
+are taken from `environment(formula)`.}
 
 \item{subset}{An optional vector used to select rows (observations) of the
-data matrix \code{x}.}
+data matrix `x`.}
 
 \item{na.action}{A function which indicates what should happen when the data
-contain \code{NA}s. The default is set by the \code{na.action =} setting of \code{options()}
-and \code{na.fail()} is used if that is not set. The 'factory-fresh' default is
-\code{na.omit()}.}
+contain `NA`s. The default is set by the `na.action =` setting of `options()`
+and `na.fail()` is used if that is not set. The 'factory-fresh' default is
+`na.omit()`.}
 
-\item{y}{\code{NULL} (default), or a vector, matrix or data frame with compatible
-dimensions to \code{x} for \code{Correlation()}. The default is equivalent to \code{x = y},
+\item{y}{`NULL` (default), or a vector, matrix or data frame with compatible
+dimensions to `x` for `Correlation()`. The default is equivalent to `x = y`,
 but more efficient.}
 
 \item{use}{An optional character string giving a method for computing
 correlations in the presence of missing values. This must be (an abbreviation
-of) one of the strings \code{"everything"}, \code{"all.obs"}, \code{"complete.obs"},
-\code{"na.or.complete"}, or \code{"pairwise.complete.obs"}.}
+of) one of the strings `"everything"`, `"all.obs"`, `"complete.obs"`,
+`"na.or.complete"`, or `"pairwise.complete.obs"`.}
 
 \item{method}{A character string indicating which correlation coefficient is
-to be computed. One of \code{"pearson"} (default), \code{"kendall"}, or \code{"spearman"},
+to be computed. One of `"pearson"` (default), `"kendall"`, or `"spearman"`,
 can be abbreviated.}
 
 \item{digits}{Digits to print after the decimal separator.}
@@ -101,8 +129,8 @@ negative equivalents are automatically computed for the graph. Do not include
 
 \item{palette}{A function that can produce a palette of colors.}
 
-\item{col}{Color of the ellipse. If \code{NULL} (default), the colors will be
-computed using \code{cutpoints =} and \code{palette =}.}
+\item{col}{Color of the ellipse. If `NULL` (default), the colors will be
+computed using `cutpoints =` and `palette =`.}
 
 \item{numbers}{Do we print correlation values in the center of the ellipses?}
 
@@ -126,17 +154,18 @@ of one.}
 \item{labels}{The label to draw nead arrows.}
 }
 \value{
-\code{Correlation()} and \code{as.Correlation()`` create a 'Correlation' object, while}is.Correlation()`` tests for it.
+`Correlation()` and `as.Correlation()`` create a 'Correlation'
+object, while `is.Correlation()`` tests for it.
 
-There are \code{print()} and \code{summary()} methods for the 'Correlation' object
-that differ in the symbolic encoding of the correlations in \code{summary()},
-using5 symnum()], which makes large correlation matrices more readable.
+There are `print()` and `summary()` methods for the 'Correlation' object
+that differ in the symbolic encoding of the correlations in `summary()`,
+using symnum()], which makes large correlation matrices more readable.
 
-The method \code{plot()} returns nothing, but it draws ellipses on a graph that
+The method `plot()` returns nothing, but it draws ellipses on a graph that
 represent the correlation matrix visually. This is essentially the
-\code{\link[=plotcorr]{plotcorr()}} function from package \strong{ellipse}, with slightly different
-default arguments and with default \code{cutpoints} equivalent to those used in
-the \code{summary()} method.
+[ellipse::plotcorr()] function from package **ellipse**, with slightly different
+default arguments and with default `cutpoints` equivalent to those used in
+the `summary()` method.
 }
 \description{
 Compute the correlation matrix between two variables, or more (between all
@@ -165,14 +194,12 @@ plot(mtcars.cor2, type = "lower")
 mtcars.cor2["mpg", "cyl"] # Extract a correlation from the correlation matrix
 }
 \seealso{
-\code{\link[=cov]{cov()}}, \code{\link[=cov2cor]{cov2cor()}}, \code{\link[=cov.wt]{cov.wt()}}, \code{\link[=symnum]{symnum()}}, \code{\link[=plotcorr]{plotcorr()}} and look
-at \code{\link[=panel_cor]{panel_cor()}}
+[stats::cov()], [stats::cov2cor()], [stats::cov.wt()], [stats::symnum()], [ellipse::plotcorr()] and look
+at [SciViews::panel_cor()]
 }
 \author{
-Philippe Grosjean \href{mailto:phgrosjean@sciviews.org}{phgrosjean@sciviews.org}, wrapping code in package
-ellipse, function \code{\link[=plotcorr]{plotcorr()}} for the \code{plot.Correlation()} method.
+Philippe Grosjean <phgrosjean@sciviews.org>, wrapping code in package
+ellipse, function [ellipse::plotcorr()] for the `plot.Correlation()` method.
 }
-\concept{
-correlation matrix and plot
-}
+\concept{correlation matrix and plot}
 \keyword{distribution}

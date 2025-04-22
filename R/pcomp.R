@@ -6,17 +6,17 @@
 #' @param x A matrix or data frame with numeric data.
 #' @param formula A formula with no response variable, referring only to numeric
 #' variables.
-#' @param data An optional data frame (or similar: see [model.frame()])
+#' @param data An optional data frame (or similar: see [stats::model.frame()])
 #' containing the variables in the formula `formula =`. By default the variables
 #' are taken from `environment(formula)`.
 #' @param subset An optional vector used to select rows (observations) of the
 #' data matrix `x`.
 #' @param na.action A function which indicates what should happen when the data
 #' contain `NA`s. The default is set by the `na.action =` setting of
-#' [options()], and is [na.fail()] if that is  not set. The 'factory-fresh'
-#' default is [na.omit()].
-#' @param method Either `"svd"` (using [prcomp()]), `"eigen"` (using
-#' [princomp()]), or an abbreviation.
+#' [options()], and is [stats::na.fail()] if that is  not set. The 'factory-fresh'
+#' default is [stats::na.omit()].
+#' @param method Either `"svd"` (using [stats::prcomp()]), `"eigen"` (using
+#' [stats::princomp()]), or an abbreviation.
 #' @param ... Arguments passed to or from other methods. If \`x` is a
 #' formula one might specify `scale =`, `tol =` or `covmat =`.
 #' @param scores A logical value indicating whether the score on each principal
@@ -39,7 +39,7 @@
 #' `tol = sqrt(.Machine$double.eps)`, which would omit essentially constant
 #' components.
 #' @param covmat A covariance matrix, or a covariance list as returned by
-#' [cov.wt()] (and [cov.mve()] or [cov.mcd()] from package **MASS**). If
+#' [stats::cov.wt()] (and [MASS::cov.mve()] or [MASS::cov.mcd()] from package **MASS**). If
 #' supplied, this is used rather than the covariance matrix of `x`.
 #' @param object A 'pcomp' object.
 #' @param loadings Do we also summarize the loadings?
@@ -68,7 +68,7 @@
 #' @param groups A grouping factor.
 #' @param border The color of the border.
 #' @param level The probability level to use to draw the ellipse.
-#' @param pc.biplot Do we create a Gabriel's biplot (see [biplot()])?
+#' @param pc.biplot Do we create a Gabriel's biplot (see [stats::biplot()])?
 #' @param npcs The number of principal components to represent in the screeplot.
 #' @param type The type of screeplot (`"barplot"` or `"lines"`) or pairs plot
 #' (`"loadings"` or `"correlations"`).
@@ -83,23 +83,23 @@
 #' @param dim The number of principal components to keep.
 #' @return A `c("pcomp", "pca", "princomp")` object.
 #' @details `pcomp()` is a generic function with `"formula"` and `"default"`
-#' methods. It is essentially a wrapper around [prcomp()] and [princomp()] to
+#' methods. It is essentially a wrapper around [stats::prcomp()] and [stats::princomp()] to
 #' provide a coherent interface and object for both methods.
 #'
 #' A 'pcomp' object is created. It inherits from 'pca' (as in **labdsv**
 #' package, but not compatible with the 'pca' object of package **ade4**) and of
 #' 'princomp'.
 #'
-#' For more information on calculation done, refer to [prcomp()] for
-#' `method = "svd"` or [princomp()] for `method = "eigen"`.
+#' For more information on calculation done, refer to [stats::prcomp()] for
+#' `method = "svd"` or [stats::princomp()] for `method = "eigen"`.
 #' @note The signs of the columns of the loadings and scores are arbitrary, and
 #' so may differ between functions for PCA, and even between different builds of
 #' \R.
 #' @author Philippe Grosjean <phgrosjean@sciviews.org>, but the core code is
 #' indeed in package **stats**.
 #' @export
-#' @seealso [vectorplot()], [prcomp()], [princomp()], [loadings()],
-#' [Correlation()]
+#' @seealso [vectorplot()], [stats::prcomp()], [stats::princomp()], [stats::loadings()],
+#' [SciViews::Correlation()]
 #' @keywords models
 #' @concept principal component analysis and biplot
 #' @examples

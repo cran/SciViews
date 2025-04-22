@@ -22,46 +22,99 @@
 \usage{
 pcomp(x, ...)
 
-\method{pcomp}{formula}(formula, data = NULL, subset, na.action,
-  method = c("svd", "eigen"), ...)
+\method{pcomp}{formula}(formula, data = NULL, subset, na.action, method = c("svd", "eigen"), ...)
 
-\method{pcomp}{default}(x, method = c("svd", "eigen"), scores = TRUE,
-  center = TRUE, scale = TRUE, tol = NULL, covmat = NULL,
-  subset = rep(TRUE, nrow(as.matrix(x))), ...)
+\method{pcomp}{default}(
+  x,
+  method = c("svd", "eigen"),
+  scores = TRUE,
+  center = TRUE,
+  scale = TRUE,
+  tol = NULL,
+  covmat = NULL,
+  subset = rep(TRUE, nrow(as.matrix(x))),
+  ...
+)
 
 \method{print}{pcomp}(x, ...)
 
 \method{summary}{pcomp}(object, loadings = TRUE, cutoff = 0.1, ...)
 
-\method{print}{summary.pcomp}(x, digits = 3, loadings = x$print.loadings,
-  cutoff = x$cutoff, ...)
+\method{print}{summary.pcomp}(x, digits = 3, loadings = x$print.loadings, cutoff = x$cutoff, ...)
 
-\method{plot}{pcomp}(x, which = c("screeplot", "loadings", "correlations",
-  "scores"), choices = 1L:2L, col = par("col"), bar.col = "gray",
-  circle.col = "gray", ar.length = 0.1, pos = NULL, labels = NULL,
-  cex = par("cex"), main = paste(deparse(substitute(x)), which, sep =
-  " - "), xlab, ylab, ...)
+\method{plot}{pcomp}(
+  x,
+  which = c("screeplot", "loadings", "correlations", "scores"),
+  choices = 1L:2L,
+  col = par("col"),
+  bar.col = "gray",
+  circle.col = "gray",
+  ar.length = 0.1,
+  pos = NULL,
+  labels = NULL,
+  cex = par("cex"),
+  main = paste(deparse(substitute(x)), which, sep = " - "),
+  xlab,
+  ylab,
+  ...
+)
 
-\method{screeplot}{pcomp}(x, npcs = min(10, length(x$sdev)),
-  type = c("barplot", "lines"), col = "cornsilk",
-  main = deparse(substitute(x)), ...)
+\method{screeplot}{pcomp}(
+  x,
+  npcs = min(10, length(x$sdev)),
+  type = c("barplot", "lines"),
+  col = "cornsilk",
+  main = deparse(substitute(x)),
+  ...
+)
 
-\method{points}{pcomp}(x, choices = 1L:2L, type = "p", pch = par("pch"),
-  col = par("col"), bg = par("bg"), cex = par("cex"), ...)
+\method{points}{pcomp}(
+  x,
+  choices = 1L:2L,
+  type = "p",
+  pch = par("pch"),
+  col = par("col"),
+  bg = par("bg"),
+  cex = par("cex"),
+  ...
+)
 
-\method{lines}{pcomp}(x, choices = 1L:2L, groups, type = c("p", "e"),
-  col = par("col"), border = par("fg"), level = 0.9, ...)
+\method{lines}{pcomp}(
+  x,
+  choices = 1L:2L,
+  groups,
+  type = c("p", "e"),
+  col = par("col"),
+  border = par("fg"),
+  level = 0.9,
+  ...
+)
 
-\method{text}{pcomp}(x, choices = 1L:2L, labels = NULL, col = par("col"),
-  cex = par("cex"), pos = NULL, ...)
+\method{text}{pcomp}(
+  x,
+  choices = 1L:2L,
+  labels = NULL,
+  col = par("col"),
+  cex = par("cex"),
+  pos = NULL,
+  ...
+)
 
-\method{biplot}{pcomp}(x, choices = 1L:2L, scale = 1, pc.biplot = FALSE,
-  ...)
+\method{biplot}{pcomp}(x, choices = 1L:2L, scale = 1, pc.biplot = FALSE, ...)
 
-\method{pairs}{pcomp}(x, choices = 1L:3L, type = c("loadings",
-  "correlations"), col = par("col"), circle.col = "gray",
-  ar.col = par("col"), ar.length = 0.05, pos = NULL,
-  ar.cex = par("cex"), cex = par("cex"), ...)
+\method{pairs}{pcomp}(
+  x,
+  choices = 1L:3L,
+  type = c("loadings", "correlations"),
+  col = par("col"),
+  circle.col = "gray",
+  ar.col = par("col"),
+  ar.length = 0.05,
+  pos = NULL,
+  ar.cex = par("cex"),
+  cex = par("cex"),
+  ...
+)
 
 \method{predict}{pcomp}(object, newdata, dim = length(object$sdev), ...)
 
@@ -74,52 +127,53 @@ scores(x, ...)
 \arguments{
 \item{x}{A matrix or data frame with numeric data.}
 
-\item{...}{Arguments passed to or from other methods. If `x\code{is a formula one might specify}scale =\code{,}tol =\code{or}covmat =`.}
+\item{...}{Arguments passed to or from other methods. If \`x` is a
+formula one might specify `scale =`, `tol =` or `covmat =`.}
 
 \item{formula}{A formula with no response variable, referring only to numeric
 variables.}
 
-\item{data}{An optional data frame (or similar: see \code{\link[=model.frame]{model.frame()}})
-containing the variables in the formula \code{formula =}. By default the variables
-are taken from \code{environment(formula)}.}
+\item{data}{An optional data frame (or similar: see [stats::model.frame()])
+containing the variables in the formula `formula =`. By default the variables
+are taken from `environment(formula)`.}
 
 \item{subset}{An optional vector used to select rows (observations) of the
-data matrix \code{x}.}
+data matrix `x`.}
 
 \item{na.action}{A function which indicates what should happen when the data
-contain \code{NA}s. The default is set by the \code{na.action =} setting of
-\code{\link[=options]{options()}}, and is \code{\link[=na.fail]{na.fail()}} if that is  not set. The 'factory-fresh'
-default is \code{\link[=na.omit]{na.omit()}}.}
+contain `NA`s. The default is set by the `na.action =` setting of
+[options()], and is [stats::na.fail()] if that is  not set. The 'factory-fresh'
+default is [stats::na.omit()].}
 
-\item{method}{Either \code{"svd"} (using \code{\link[=prcomp]{prcomp()}}), \code{"eigen"} (using
-\code{\link[=princomp]{princomp()}}), or an abbreviation.}
+\item{method}{Either `"svd"` (using [stats::prcomp()]), `"eigen"` (using
+[stats::princomp()]), or an abbreviation.}
 
 \item{scores}{A logical value indicating whether the score on each principal
 component should be calculated.}
 
 \item{center}{A logical value indicating whether the variables should be
 shifted to be zero centered. Alternately, a vector of length equal the
-number of columns of \code{x} can be supplied. The value is passed to \code{scale =}.
-Note that this argument is ignored for \code{method = "eigen"} and the dataset is
+number of columns of `x` can be supplied. The value is passed to `scale =`.
+Note that this argument is ignored for `method = "eigen"` and the dataset is
 always centered in this case.}
 
 \item{scale}{A logical value indicating whether the variables should be
 scaled to have unit variance before the analysis takes place. The default is
-\code{TRUE}, which in general, is advisable. Alternatively, a vector of length
-equal the number of columns of \code{x} can be supplied. The value is passed to
-\code{\link[=scale]{scale()}}.}
+`TRUE`, which in general, is advisable. Alternatively, a vector of length
+equal the number of columns of `x` can be supplied. The value is passed to
+[scale()].}
 
-\item{tol}{Only when \code{method = "svd"}. A value indicating the magnitude
+\item{tol}{Only when `method = "svd"`. A value indicating the magnitude
 below which components should be omitted. (Components are omitted if their
-standard deviations are less than or equal to \code{tol} times the standard
+standard deviations are less than or equal to `tol` times the standard
 deviation of the first component.) With the default null setting, no
-components are omitted. Other settings for \code{tol =} could be \code{tol = 0} or
-\code{tol = sqrt(.Machine$double.eps)}, which would omit essentially constant
+components are omitted. Other settings for `tol =` could be `tol = 0` or
+`tol = sqrt(.Machine$double.eps)`, which would omit essentially constant
 components.}
 
 \item{covmat}{A covariance matrix, or a covariance list as returned by
-\code{\link[=cov.wt]{cov.wt()}} (and \code{\link[=cov.mve]{cov.mve()}} or \code{\link[=cov.mcd]{cov.mcd()}} from package \strong{MASS}). If
-supplied, this is used rather than the covariance matrix of \code{x}.}
+[stats::cov.wt()] (and [MASS::cov.mve()] or [MASS::cov.mcd()] from package **MASS**). If
+supplied, this is used rather than the covariance matrix of `x`.}
 
 \item{object}{A 'pcomp' object.}
 
@@ -149,7 +203,7 @@ plots.}
 \item{pos}{The position of text relative to arrows in loadings and
 correlation plots.}
 
-\item{labels}{The labels to write. If \code{NULL} default values are computed.}
+\item{labels}{The labels to write. If `NULL` default values are computed.}
 
 \item{cex}{The factor of expansion for text (labels) in the graphs.}
 
@@ -161,8 +215,8 @@ correlation plots.}
 
 \item{npcs}{The number of principal components to represent in the screeplot.}
 
-\item{type}{The type of screeplot (\code{"barplot"} or \code{"lines"}) or pairs plot
-(\code{"loadings"} or \code{"correlations"}).}
+\item{type}{The type of screeplot (`"barplot"` or `"lines"`) or pairs plot
+(`"loadings"` or `"correlations"`).}
 
 \item{pch}{The type of symbol to use.}
 
@@ -174,7 +228,7 @@ correlation plots.}
 
 \item{level}{The probability level to use to draw the ellipse.}
 
-\item{pc.biplot}{Do we create a Gabriel's biplot (see \code{\link[=biplot]{biplot()}})?}
+\item{pc.biplot}{Do we create a Gabriel's biplot (see [stats::biplot()])?}
 
 \item{ar.col}{Color of arrows.}
 
@@ -191,23 +245,23 @@ used for mcalculating the PCA. Correlation with PCs is calculated. You can
 then plot these additional variables in the correlation plot.}
 }
 \value{
-A \code{c("pcomp", "pca", "princomp")} object.
+A `c("pcomp", "pca", "princomp")` object.
 }
 \description{
 Perform a principal components analysis on a matrix or data frame and return
-a \code{pcomp} object.
+a `pcomp` object.
 }
 \details{
-\code{pcomp()} is a generic function with \code{"formula"} and \code{"default"}
-methods. It is essentially a wrapper around \code{\link[=prcomp]{prcomp()}} and \code{\link[=princomp]{princomp()}} to
+`pcomp()` is a generic function with `"formula"` and `"default"`
+methods. It is essentially a wrapper around [stats::prcomp()] and [stats::princomp()] to
 provide a coherent interface and object for both methods.
 
-A 'pcomp' object is created. It inherits from 'pca' (as in \strong{labdsv}
-package, but not compatible with the 'pca' object of package \strong{ade4}) and of
+A 'pcomp' object is created. It inherits from 'pca' (as in **labdsv**
+package, but not compatible with the 'pca' object of package **ade4**) and of
 'princomp'.
 
-For more information on calculation done, refer to \code{\link[=prcomp]{prcomp()}} for
-\code{method = "svd"} or \code{\link[=princomp]{princomp()}} for \code{method = "eigen"}.
+For more information on calculation done, refer to [stats::prcomp()] for
+`method = "svd"` or [stats::princomp()] for `method = "eigen"`.
 }
 \note{
 The signs of the columns of the loadings and scores are arbitrary, and
@@ -244,14 +298,12 @@ iris.pca <- pcomp(iris[, -5])
 pairs(iris.pca, col = (2:4)[iris$Species])
 }
 \seealso{
-\code{\link[=vectorplot]{vectorplot()}}, \code{\link[=prcomp]{prcomp()}}, \code{\link[=princomp]{princomp()}}, \code{\link[=loadings]{loadings()}},
-\code{\link[=Correlation]{Correlation()}}
+[vectorplot()], [stats::prcomp()], [stats::princomp()], [stats::loadings()],
+[SciViews::Correlation()]
 }
 \author{
-Philippe Grosjean \href{mailto:phgrosjean@sciviews.org}{phgrosjean@sciviews.org}, but the core code is
-indeed in package \strong{stats}.
+Philippe Grosjean <phgrosjean@sciviews.org>, but the core code is
+indeed in package **stats**.
 }
-\concept{
-principal component analysis and biplot
-}
+\concept{principal component analysis and biplot}
 \keyword{models}

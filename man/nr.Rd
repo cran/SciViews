@@ -7,7 +7,11 @@
 \alias{ROWS}
 \alias{COLS}
 \title{Convenience functions for rows or columns manipulations.}
-\format{An object of class \code{numeric} of length 1.}
+\format{
+An object of class \code{numeric} of length 1.
+
+An object of class \code{numeric} of length 1.
+}
 \usage{
 nr(x)
 
@@ -21,10 +25,10 @@ COLS
 \item{x}{Any object.}
 }
 \description{
-\code{nr()} and \code{nc()} are synonyms of the ugly \code{NROW()} or \code{NCOL()} that still
-provide a result, even if \code{dim} attribute of the object is not set, on the
-contrary to \code{nrow()}or \code{ncol()}. \code{ROWS} and \code{COLS} are constants that makes
-call to \code{apply()} more expressive.
+`nr()` and `nc()` are synonyms of the ugly `NROW()` or `NCOL()` that still
+provide a result, even if `dim` attribute of the object is not set, on the
+contrary to `nrow()`or `ncol()`. `ROWS` and `COLS` are constants that makes
+call to `apply()` more expressive.
 }
 \examples{
 mm <- matrix(1:6, nrow = 3)
@@ -38,6 +42,6 @@ apply(mm, ROWS, mean) # Idem apply(mm, 1, mean)
 apply(mm, COLS, mean) # Idem apply(mm, 2, mean)
 }
 \seealso{
-\code{\link[=NROW]{NROW()}}
+[NROW()]
 }
 \keyword{datasets}

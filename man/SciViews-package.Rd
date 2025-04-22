@@ -2,9 +2,13 @@
 % Please edit documentation in R/SciViews-package.R
 \docType{package}
 \name{SciViews-package}
+\alias{SciViews}
 \alias{SciViews-package}
-\title{SciViews - Main package}
+\title{SciViews: SciViews - Main package}
 \description{
+Functions to install SciViews additions to R, and more tools.
+}
+\details{
 The SciViews package provides various functions to install the SciViews::R
 dialect. It also provides additional utilites besides base, recommended and
 tidyverse.
@@ -15,3 +19,17 @@ tidyverse.
 TODO...
 }
 
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/SciViews/SciViews}
+  \item \url{https://www.sciviews.org/SciViews-R/}
+  \item Report bugs at \url{https://github.com/SciViews/SciViews/issues}
+}
+
+}
+\author{
+\strong{Maintainer}: Philippe Grosjean \email{phgrosjean@sciviews.org}
+
+}
+\keyword{internal}

@@ -11,37 +11,109 @@
 \alias{panel_smooth}
 \title{More panel plots.}
 \usage{
-panel_reg(x, y, col = par("col"), bg = par("bg"), pch = par("pch"),
-  cex = par("cex"), lwd = par("lwd"), line.reg = lm, line.col = "red",
-  line.lwd = lwd, untf = TRUE, ...)
+panel_reg(
+  x,
+  y,
+  col = par("col"),
+  bg = par("bg"),
+  pch = par("pch"),
+  cex = par("cex"),
+  lwd = par("lwd"),
+  line.reg = lm,
+  line.col = "red",
+  line.lwd = lwd,
+  untf = TRUE,
+  ...
+)
 
-panel.reg(x, y, col = par("col"), bg = par("bg"), pch = par("pch"),
-  cex = par("cex"), lwd = par("lwd"), line.reg = lm, line.col = "red",
-  line.lwd = lwd, untf = TRUE, ...)
+panel.reg(
+  x,
+  y,
+  col = par("col"),
+  bg = par("bg"),
+  pch = par("pch"),
+  cex = par("cex"),
+  lwd = par("lwd"),
+  line.reg = lm,
+  line.col = "red",
+  line.lwd = lwd,
+  untf = TRUE,
+  ...
+)
 
-panel_ellipse(x, y, col = par("col"), bg = par("bg"), pch = par("pch"),
-  cex = par("cex"), el.level = 0.7, el.col = "cornsilk",
-  el.border = "red", major = TRUE, ...)
+panel_ellipse(
+  x,
+  y,
+  col = par("col"),
+  bg = par("bg"),
+  pch = par("pch"),
+  cex = par("cex"),
+  el.level = 0.7,
+  el.col = "cornsilk",
+  el.border = "red",
+  major = TRUE,
+  ...
+)
 
-panel.ellipse(x, y, col = par("col"), bg = par("bg"), pch = par("pch"),
-  cex = par("cex"), el.level = 0.7, el.col = "cornsilk",
-  el.border = "red", major = TRUE, ...)
+panel.ellipse(
+  x,
+  y,
+  col = par("col"),
+  bg = par("bg"),
+  pch = par("pch"),
+  cex = par("cex"),
+  el.level = 0.7,
+  el.col = "cornsilk",
+  el.border = "red",
+  major = TRUE,
+  ...
+)
 
-panel_cor(x, y, use = "everything", method = c("pearson", "kendall",
-  "spearman"), alternative = c("two.sided", "less", "greater"), digits = 2,
-  prefix = "", cex = par("cex"), cor.cex = cex, stars.col = "red", ...)
+panel_cor(
+  x,
+  y,
+  use = "everything",
+  method = c("pearson", "kendall", "spearman"),
+  alternative = c("two.sided", "less", "greater"),
+  digits = 2,
+  prefix = "",
+  cex = par("cex"),
+  cor.cex = cex,
+  stars.col = "red",
+  ...
+)
 
-panel.cor(x, y, use = "everything", method = c("pearson", "kendall",
-  "spearman"), alternative = c("two.sided", "less", "greater"), digits = 2,
-  prefix = "", cex = par("cex"), cor.cex = cex, stars.col = "red", ...)
+panel.cor(
+  x,
+  y,
+  use = "everything",
+  method = c("pearson", "kendall", "spearman"),
+  alternative = c("two.sided", "less", "greater"),
+  digits = 2,
+  prefix = "",
+  cex = par("cex"),
+  cor.cex = cex,
+  stars.col = "red",
+  ...
+)
 
-panel_smooth(x, y, col = par("col"), bg = NA, pch = par("pch"), cex = 1,
-  col.smooth = "red", span = 2/3, iter = 3, ...)
+panel_smooth(
+  x,
+  y,
+  col = par("col"),
+  bg = NA,
+  pch = par("pch"),
+  cex = 1,
+  col.smooth = "red",
+  span = 2/3,
+  iter = 3,
+  ...
+)
 }
 \arguments{
 \item{x}{A numeric vector.}
 
-\item{y}{A numeric vector of same length as \code{x}.}
+\item{y}{A numeric vector of same length as `x`.}
 
 \item{col}{The color of the points.}
 
@@ -54,7 +126,7 @@ panel_smooth(x, y, col = par("col"), bg = NA, pch = par("pch"), cex = 1,
 \item{lwd}{The line width.}
 
 \item{line.reg}{A function that calculates coefficients of a straight line,
-for instance, \code{\link[=lm]{lm()}}, or \code{\link[=rlm]{rlm()}} for robust linear regression.}
+for instance, [stats::lm()], or [MASS::rlm()] for robust linear regression.}
 
 \item{line.col}{The color of the line.}
 
@@ -73,17 +145,17 @@ data; the default value of 0.7 draws an ellipse of roughly +/-1 sd.}
 \item{el.border}{The color used to draw the border of the ellipse and the
 standardized major axis.}
 
-\item{major}{If \code{TRUE}, the standardized major axis is also drawn.}
+\item{major}{If `TRUE`, the standardized major axis is also drawn.}
 
-\item{use}{One of \code{"everything"}, \code{"all.obs"}, \code{"complete.obs"},
-\code{"na.or.complete"}, or \code{"pairwise.complete.obs"} (can be abbreviated).
-Defines how the \code{\link[=cor]{cor()}} function behaves with missing observations.}
+\item{use}{One of `"everything"`, `"all.obs"`, `"complete.obs"`,
+`"na.or.complete"`, or `"pairwise.complete.obs"` (can be abbreviated).
+Defines how the [stats::cor()] function behaves with missing observations.}
 
-\item{method}{One of the three correlation coefficients \code{"pearson"}
-(default), \code{"kendall"}, or \code{"spearman"}. Can be abbreviated.}
+\item{method}{One of the three correlation coefficients `"pearson"`
+(default), `"kendall"`, or `"spearman"`. Can be abbreviated.}
 
 \item{alternative}{The alternative hypothesis in correlation test, see
-\code{\link[=cor.test]{cor.test()}}.}
+[stats::cor.test()].}
 
 \item{digits}{The number of decimal digits to print when the correlation
 coefficient is printed in the graph.}
@@ -99,23 +171,21 @@ coefficients.}
 
 \item{col.smooth}{Color to be used by lines for drawing the smooths.}
 
-\item{span}{Smoothing parameter f for \code{\link[=lowess]{lowess()}}, see there.}
+\item{span}{Smoothing parameter f for [stats::lowess()], see there.}
 
-\item{iter}{Number of robustness iterations for \code{\link[=lowess]{lowess()}}.}
+\item{iter}{Number of robustness iterations for [stats::lowess()].}
 }
 \value{
 These functions return nothing and are used for their side effect of
 plotting in panels of composite plots.
 }
 \description{
-Several panel plots that can be used with functions like \code{\link[=coplot]{coplot()}} and
-[pairs))].
-
-[pairs))]: R:pairs))
+Several panel plots that can be used with functions like [graphics::coplot()] and
+[graphics::pairs))].
 }
 \details{
 Theses functions should be used outside of the diagonal in
-\code{\link[=pairs]{pairs()}}, or with \code{\link[=coplot]{coplot()}}, as they are bivariate plots.
+[graphics::pairs()], or with [graphics::coplot()], as they are bivariate plots.
 }
 \examples{
 # Smooth lines in lower graphs and straight lines in upper graphs
@@ -148,14 +218,12 @@ coplot(Petal.Length ~ Sepal.Length | Species, data = iris,
   panel = panel_ellipse)
 }
 \seealso{
-\code{\link[=coplot]{coplot()}}, \code{\link[=pairs]{pairs()}}, \code{\link[=panel.smooth]{panel.smooth()}}, \code{\link[=lm]{lm()}}, \code{\link[=ellipse]{ellipse()}},
-\code{\link[=cor]{cor()}} and \code{\link[=cor.test]{cor.test()}}
+[graphics::coplot()], [graphics::pairs()], [graphics::panel.smooth()], [stats::lm()], [ellipse::ellipse()],
+[stats::cor()] and [stats::cor.test()]
 }
 \author{
-Philippe Grosjean \href{mailto:phgrosjean@sciviews.org}{phgrosjean@sciviews.org}, but code inspired from
-\code{\link[=panel.smooth]{panel.smooth()}} in \strong{graphics} and \code{panel.car()} in package \strong{car}.
+Philippe Grosjean <phgrosjean@sciviews.org>, but code inspired from
+[graphics::panel.smooth()] in **graphics** and `panel.car()` in package **car**.
 }
-\concept{
-panel plots
-}
+\concept{panel plots}
 \keyword{aplot}

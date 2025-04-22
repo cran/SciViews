@@ -7,7 +7,7 @@
 #' `is.Correlation()`, `as.Correlation()`.
 #' @param formula A formula with no response variable, referring only to numeric
 #' variables.
-#' @param data An optional data frame (or similar: see [model.frame()])
+#' @param data An optional data frame (or similar: see [stats::model.frame()])
 #' containing the variables in the formula `formula`. By default the variables
 #' are taken from `environment(formula)`.
 #' @param subset An optional vector used to select rows (observations) of the
@@ -56,18 +56,18 @@
 #'
 #' There are `print()` and `summary()` methods for the 'Correlation' object
 #' that differ in the symbolic encoding of the correlations in `summary()`,
-#' using5 symnum()], which makes large correlation matrices more readable.
+#' using symnum()], which makes large correlation matrices more readable.
 #'
 #' The method `plot()` returns nothing, but it draws ellipses on a graph that
 #' represent the correlation matrix visually. This is essentially the
-#' [plotcorr()] function from package **ellipse**, with slightly different
+#' [ellipse::plotcorr()] function from package **ellipse**, with slightly different
 #' default arguments and with default `cutpoints` equivalent to those used in
 #' the `summary()` method.
 #' @author Philippe Grosjean <phgrosjean@sciviews.org>, wrapping code in package
-#' ellipse, function [plotcorr()] for the `plot.Correlation()` method.
+#' ellipse, function [ellipse::plotcorr()] for the `plot.Correlation()` method.
 #' @export
-#' @seealso [cov()], [cov2cor()], [cov.wt()], [symnum()], [plotcorr()] and look
-#' at [panel_cor()]
+#' @seealso [stats::cov()], [stats::cov2cor()], [stats::cov.wt()], [stats::symnum()], [ellipse::plotcorr()] and look
+#' at [SciViews::panel_cor()]
 #' @keywords distribution
 #' @concept correlation matrix and plot
 #' @examples

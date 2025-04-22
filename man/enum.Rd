@@ -10,12 +10,12 @@ enum(x)
 \item{x}{Any object.}
 }
 \description{
-\code{enum()} is creating a vector of integers to enumarate items in an object. It
-is particularly useful in the \code{for(i in enum(object))} construct.
+`enum()` is creating a vector of integers to enumarate items in an object. It
+is particularly useful in the `for(i in enum(object))` construct.
 }
 \note{
-The pattern \code{for(i in 1:length(object))} is often found, but it fails
-in case \code{length(object) == 0}! \code{enum()} is indeed a synonym of \code{seq_along()},
+The pattern `for(i in 1:length(object))` is often found, but it fails
+in case `length(object) == 0`! `enum()` is indeed a synonym of `seq_along()`,
 but the later one is less  expressive in the context.
 }
 \examples{
@@ -25,8 +25,8 @@ enum(numeric(0))
 1:length(numeric(0))
 enum(NULL)
 letters5 <- letters[1:5]
-for (i in enum(letters5)) cat("letter", i, "=", letters5[i], "\\n")
+for (i in enum(letters5)) cat("letter", i, "=", letters5[i], "\n")
 }
 \seealso{
-\code{\link[=seq_along]{seq_along()}}
+[seq_along()]
 }

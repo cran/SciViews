@@ -1,10 +1,10 @@
 Package: SciViews
 Type: Package
-Version: 0.9-13.1
-Date: 2018-01-05
+Version: 0.9-13.2
 Title: SciViews - Main package
 Description: Functions to install SciViews additions to R, and more
         tools.
+Author: Philippe Grosjean [aut, cre]
 Authors@R: c(person("Philippe", "Grosjean", role = c("aut", "cre"),
         email = "phgrosjean@sciviews.org"))
 Maintainer: Philippe Grosjean <phgrosjean@sciviews.org>
@@ -15,11 +15,11 @@ Enhances: base
 ByteCompile: yes
 License: GPL-2
 URL: https://github.com/SciViews/SciViews,
-        http://www.sciviews.org/SciViews-R
+        https://www.sciviews.org/SciViews-R/
 BugReports: https://github.com/SciViews/SciViews/issues
-RoxygenNote: 6.0.1
+RoxygenNote: 7.3.2
 NeedsCompilation: no
-Packaged: 2019-11-16 13:51:40 UTC; hornik
-Author: Philippe Grosjean [aut, cre]
+Encoding: UTF-8
+Packaged: 2025-04-22 10:01:56 UTC; phgrosjean
 Repository: CRAN
-Date/Publication: 2019-11-16 20:17:58 UTC
+Date/Publication: 2025-04-22 11:00:02 UTC

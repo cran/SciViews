@@ -31,24 +31,21 @@ cwm.colors(n, alpha = 1, s = 0.9, v = 0.9)
 \arguments{
 \item{n}{The number of colors (>= 1) to be in the palette.}
 
-\item{alpha}{The alpha transparency, a number in [0, 1], see argument
-\code{alpha =} in [hsv()].
-
-[0, 1]: R:0,%201%5C
-[hsv()]: R:hsv()}
+\item{alpha}{The alpha transparency, a number in \[0, 1\], see argument
+`alpha =` in [grDevices::hsv()].}
 
 \item{s}{The 'saturation' to be used to complete the HSV color descriptions.}
 
 \item{v}{The 'value' to use for the HSV color descriptions.}
 }
 \description{
-Create vectors of \code{n} contiguous colors.
+Create vectors of `n` contiguous colors.
 }
 \details{
-\code{cwm_colors(s = 0.5, v = 1)} gives very similar colors to
-\code{cm.colors()}.
-\code{ryg_colors()} is similar to \code{rainbow(start = 0, end = 2/6)}.
-The \code{xxx_colors()} (tidyverse name-compatible) and `xxx.colors()``
+`cwm_colors(s = 0.5, v = 1)` gives very similar colors to
+`cm.colors()`.
+`ryg_colors()` is similar to `rainbow(start = 0, end = 2/6)`.
+The `xxx_colors()` (tidyverse name-compatible) and `xxx.colors()``
 (grDevices name-compatible) functions are synonyms.
 }
 \examples{
@@ -61,9 +58,7 @@ pie(rep(1, 11), col = ryg.colors(11), main = "Red - yellow - green")
 par(opar)
 }
 \seealso{
-\code{\link[=cm.colors]{cm.colors()}}, \code{\link[=colorRampPalette]{colorRampPalette()}}
+[grDevices::cm.colors()], [grDevices::colorRampPalette()]
 }
-\concept{
-color palettes
-}
+\concept{color palettes}
 \keyword{color}
